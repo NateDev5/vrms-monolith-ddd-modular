@@ -1,0 +1,16 @@
+package com.nate.vrms_2430884.modules.cars.application.port.out;
+
+import com.nate.vrms_2430884.modules.cars.domain.model.Vehicle;
+import com.nate.vrms_2430884.modules.cars.domain.model.VehicleId;
+import com.nate.vrms_2430884.modules.cars.domain.model.Vin;
+import java.util.List;
+import java.util.Optional;
+
+public interface VehicleRepositoryPort {
+    Vehicle save(Vehicle vehicle);
+    Optional<Vehicle> findById(VehicleId id);
+    Optional<Vehicle> findByVin(Vin vin);
+    boolean existsByVin(Vin vin);
+    List<Vehicle> findAll();
+    void deleteById(VehicleId id);
+}

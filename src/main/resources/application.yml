@@ -1,27 +1,28 @@
 spring:
   application:
-    name: vrms-2430884
-  
+    name: vrms2430884
+
+# TODO: add datasource, flyway, etc.
   datasource:
     url: jdbc:h2:mem:vrms-db
     driver-class-name: org.h2.Driver
     username: sa
     password:
-  
+
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-        ddl-auto: validate
+      ddl-auto: validate # IMPORTANT: Flyway manages schema, not Hibernate auto-DDL
     show-sql: true
     properties:
       hibernate:
         format_sql: true
-  
+
   h2:
     console:
       enabled: true
       path: /h2-console
-  
+
   flyway:
     enabled: true
     locations: classpath:db/migration
@@ -36,7 +37,7 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     operationsSorter: method
-  t i  tagsSorter: alpha
+    tagsSorter: alpha
 
 logging:
   level:
