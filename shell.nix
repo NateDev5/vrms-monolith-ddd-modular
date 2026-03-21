@@ -4,6 +4,8 @@ pkgs.mkShell {
 	packages = with pkgs; [ podman podman-compose pgadmin4 ];
 
 	shellHook = ''
+	sudo rm -rf ~/.local/share/containers/
+
 	CONF_DIR="$HOME/.config/containers"
     POLICY_FILE="$CONF_DIR/policy.json"
     REGISTRY_FILE="$CONF_DIR/registries.conf"
